@@ -1,0 +1,111 @@
+---
+
+const faqs = [
+    {
+        question: "Can I choose just one service?",
+        answer: `Yes. Each lane (Website, Social, Email) is modular.`
+    },
+    {
+        question: "Why the bundle?",
+        answer: "For $2000/m you save thousands compared to hiring separate agencies."
+    },
+    {
+        question: "Is there a free version?",
+        answer: "Yes. Start with a self-hosted site + basic SEO at no cost."
+    },
+    {
+        question: "Do I manage anything?",
+        answer: "No. You log in, see your results, and chat with us when needed."
+    }
+]
+
+
+---
+
+
+
+<section id="faq">
+    <div class="container">
+        <div class="max-w-md m-auto text-center">
+            <h1 class="text-lg">Frequently Asked Questions</h1>
+           <p class="text-sm">Simple answers about how we work and what you get.</p>
+        </div>
+        <div class="faq-list max-w-lg m-auto">
+            {faqs.map((faq, index) => (
+                <div class="faq-item" x-data="{ expanded: false }" x-on:click="expanded = !expanded">
+                    <div class="question flex">
+                        <h3 class="text-md">{faq.question}</h3>
+
+                       <div class="collapse-icon">
+                        <svg x-show="!expanded" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="40">
+                          <path fill-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                        </svg>
+                        <svg x-show="expanded" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                         <path fill-rule="evenodd" d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+                        </svg>
+                       </div>
+                    </div>
+                    <div class="answer" x-bind:class="expanded ? 'x-hidden' : ''">
+                        <p class="text-sm">{faq.answer}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+
+<style> 
+
+
+section{
+    padding-top: 150px;
+}
+.faq-list{
+    padding: 50px 0;
+}
+.faq-item{
+    border-bottom: var(--border);
+    cursor: pointer;
+    user-select: none;
+    transition: all .3s ease;
+    padding: 40px 0;
+}
+.faq-item:last-child{
+    border-bottom: none;
+}
+
+.answer{
+    max-height: 0px;
+    overflow: hidden;
+}
+.question{
+    position: relative;
+}
+.collapse-icon{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+   
+}
+.collapse-icon svg{
+     width: 30px;
+}
+.x-hidden{
+    max-height: 100px;
+}
+.faq-item h3{
+   font-weight: 500;
+   margin-bottom: 0px;
+}
+.faq-item p{
+    transform: translateY(15px);
+}
+
+.question, .answer{
+    transition: all .3s ease;
+}
+
+
+</style>

@@ -1,0 +1,119 @@
+---
+import logo from '../images/logo.svg'
+import utils from '../utils'
+---
+
+<nav>
+    <div class="flex-center container">
+        <a href="/" class="nav-brand">
+            <img class="logo" src={logo.src} alt="" width="80">
+        </a>
+        <div class="flex-center nav-links">
+            <a href="/#services">Services</a>
+            <a href="/pricing">Pricing</a>
+            <a href="/#features">Features</a>
+            <a href="/#faq">FAQ</a>
+            <a href="/#contact">Contact</a>
+        </div>
+        <div class="flex-center nav-cta gap-1">
+            <a href={utils.free_link} target="_blank" class="button button-primary">{utils.title}</a>
+        </div>
+        <a href="#" class="nav-hamburger">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path fill-rule="evenodd" d="M3 9a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 9Zm0 6.75a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+            </svg>              
+        </a>
+    </div>
+</nav>
+
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector('.nav-hamburger') as any
+        const navLinks = document.querySelector('.nav-links') as any
+        const navCta = document.querySelector('.nav-cta') as any
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('x-hidden')
+            navCta.classList.toggle('x-hidden')
+        })
+    })
+</script>
+
+
+
+<style>
+    .logo{
+        width:50px
+    }
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    background-color: #fff;
+    padding: 1px;
+}
+.nav-hamburger{
+    display: none;
+}
+a:not(.button){
+    padding: 0px 20px;
+    text-decoration: none;
+    color: #222;
+    border-radius: var(--radius-lg);
+
+}
+a:not(.button):not(.nav-brand):hover{
+    background-color: rgba(0,0,0,.05);
+}
+
+a.button{
+    margin-bottom: 0px;
+    height: 44px;
+    line-height: 44px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.nav-links{
+    flex: 1;
+}
+.nav-brand img{
+    transform: translateY(4px);
+}
+
+
+@media (max-width: 700px) {
+    nav{
+        top: -10px;
+        padding: 30px 0;
+    }
+    .nav-links, .nav-cta{
+        display: none;
+    }
+    .nav-links{
+        margin-top: 40px;
+    }
+    .nav-brand, .nav-hamburger{
+        position: absolute;
+        top: 0;
+        display: flex;
+    }
+    .nav-brand{
+        left: 0; 
+    }
+    .nav-hamburger{
+        right: 20px;
+        top: -5px;
+    }
+    .nav-hamburger svg{
+        width: 30px;
+    }
+}
+
+.x-hidden{
+    display: flex;
+}
+
+</style>

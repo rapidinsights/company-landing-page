@@ -1,0 +1,76 @@
+---
+import apple from '../images/brands/gymlogo.png'
+import pedro from '../images/pedro.webp'
+import quoteicon from '../images/quote.svg'
+
+const review = {
+    title: `SuperChill takes the stress out of marketing.`,
+    comment: `Everything just works in the background, and I finally get to focus on running my business.`,
+    reviewer: {
+        name: `Pedro`,
+        role: `Owner, Gymstallations`,
+    }
+}
+---
+
+
+
+<section id="customers">
+    <div class="container">
+        <div class="testimony-wrapper flex-center gap-2">
+            <img src={quoteicon.src} alt="quote icon" width="70">
+
+            <div class="review">
+                <div class="reviewer">
+                   <div class="avatar">
+                    <img src={pedro.src} alt="user avatar">
+                   </div>
+                </div>
+                <div class="review-content mt-2">
+                    <h1 class="text-lg">"{review.title}</h1>
+                    <p class="text-sm">{review.comment}"</p>
+                </div>
+                <div class="review-footer flex gap-1 mt-2">
+                     <img src={apple.src} alt="apple logo" width="50">
+                    <div>
+                        <p>{review.reviewer.name}</p>
+                        <p>{review.reviewer.role}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<style>
+
+.testimony-wrapper{
+    align-items: baseline;
+}
+.review{
+    padding: 40px 60px;
+    background: var(--gradient);
+    color: var(--dark);
+    border-radius: var(--radius-lg);
+    border: var(--border);
+}
+
+.review-content h1{
+    font-weight: 500;
+}
+
+.review-footer{
+    padding-top: 20px;
+}
+.review-footer p{
+    margin: 0px;
+}
+.review-footer img{
+    background-color: #fff;
+}
+.avatar{
+    margin-top: -70px;
+}
+</style>

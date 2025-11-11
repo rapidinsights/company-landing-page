@@ -1,0 +1,56 @@
+---
+import utils from '../utils'
+---
+
+<section>
+    <div class="container">
+        <div class="footer-footer grid-half mt-4">
+            <div class="flex gap-2">
+                <p>© 2025 SuperChill Marketing</p>
+            </div>
+            <div class="flex gap-2 footer-links">
+                <a href="#">Privacy</a> <a href="#">Terms</a>
+                <a href="#">Help</a> <a href="#">Press</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<style>
+
+section{
+    background-color: var(--offwhite);
+    padding: 80px 10px 30px 10px;
+    text-align: center;
+}
+
+.footer-footer{
+    padding-top: 50px;
+}
+.footer-links{
+    justify-content: flex-end;
+}
+
+.footer-links a, .use-link{
+  color:  var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  height: 22px;
+}
+
+.footer-footer a:hover, .use-link:hover{
+    border-color: var(--accent);
+}
+
+@media (max-width: 700px) {
+    .footer-footer{
+        grid-template-columns: 100%;
+    }
+    .footer-links{
+        justify-content: center;
+    }
+    
+}
+</style>

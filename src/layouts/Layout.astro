@@ -1,0 +1,201 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+
+		<title>{title}</title>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+
+
+
+:root{
+    --accent: #1a1a1a;
+    --border: 1px solid rgb(238 238 238 / 1);
+    --shadow: 0 4px 8px #0000000d;   
+    --shadow-alt: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    --offwhite: rgb(250 250 250/1); 
+    --radius: 10px;
+    --radius-md: 16px;
+    --radius-lg: 30px;
+    --cubic: 300ms cubic-bezier(0.4,0,0.2,1);
+
+    --dark: #1d1d1d;
+    --gradient: radial-gradient(at 53% 78%, rgba(255, 255, 0, 0.3) 0px, transparent 50%), radial-gradient(at 71% 91%, rgba(51, 255, 0, 0.3) 0px, transparent 50%), radial-gradient(at 31% 91%, rgba(255, 128, 0, 0.17) 0px, transparent 50%);
+    --btn-primary-color: linear-gradient(145deg, #333333, #1a1a1a);
+    --font-family:  "Onest", sans-serif;
+}
+
+body, html{
+    font-family: var(--font-family);
+    scroll-behavior: smooth;
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+
+
+p{
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+
+.gap-0{ gap: 2px;}	
+.gap-1{ gap: 10px; }
+.gap-2{ gap: 20px; }
+.gap-3{ gap: 30px; }
+
+
+.text-md{ font-size: 2rem;}
+.text-sm{  font-size: 1.8rem;}
+.text-xs{ font-size: 1.4rem; }
+.text-xlg{
+    font-size: 5.8rem;
+    font-weight: 600;
+}
+.text-lg{
+    font-size: 4rem;
+    font-weight: 600;
+}
+.text-bolder { font-weight: 600; }
+.radius-md{ border-radius: 20px; }
+
+.text-bold{ font-weight: 400;}
+.text-normal{ font-weight: 300;}
+.text-center{text-align: center; }
+
+.max-w-sm{ max-width: 400px; }
+.max-w-md{ max-width: 700px; }
+.max-w-lg{ max-width: 900px; }
+
+.m-auto{ margin: auto; }
+
+.mt-1{ margin-top: 10px; }
+.mt-2{ margin-top: 20px; }
+.mt-3{ margin-top: 30px; }
+.mt-4{ margin-top: 40px; }
+
+.w-full{ width: 100%; }
+
+.align-center{
+	align-items: center;
+}
+.justify-center{
+    justify-content: center;
+}
+.hidden{
+    visibility: hidden;
+}
+
+
+.container{
+    max-width: 1200px;
+    padding: 10px;;
+}
+section{
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+.center{
+    text-align: center;
+}
+
+.button{
+    border-radius: var(--radius-lg);
+    text-transform: none;
+    font-weight: 500;
+    font-size: 1.4rem;
+	height: 55px;
+	line-height: 55px;
+}
+
+.button.button-primary{
+    background-color: var(--accent);
+    border-color: transparent;
+    background: var(--btn-primary-color);
+}
+.button.button-primary:hover{
+    background-color: var(--accent);
+    border-color: transparent;
+    color: #fff;
+}
+.button.button-primary:active {
+  box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.15), inset -3px -3px 8px rgba(255, 255, 255, 0.15);
+  background: var(--btn-primary-color);
+}
+.button.button-primary:focus{
+    border-color: transparent !important;
+}
+.button-secondary{
+    background-color: #fff;
+    border-color: #fff;
+    color: var(--dark);
+}
+
+.flex{
+    display: flex;
+}
+.grid{
+    display: grid;
+}
+.flex-center{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grid-half{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.avatar {
+    width: 84px;
+    height: 84px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid var(--dark);
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media (max-width: 700px) {
+    .text-xlg{
+        font-size: 3.8rem;
+    }
+    .text-lg{
+        font-size: 3rem;
+    }
+    .flex-center:not(.grid-center){
+        flex-direction: column;
+    }
+}
+	
+</style>
