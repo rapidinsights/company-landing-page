@@ -1,11 +1,4 @@
-# Astro Idol pro version
-
-
-The premium version of the popular Astro idol starter template, crafted for micro SaaS startups. Built with Astro and styled with Skeleton CSS.
-
-![basics](./src/demo/ai-pro-thumbnail.png)
-
-
+# Rapid Insights Landing Page
 
 ## 🚀 Project Structure
 
@@ -50,8 +43,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
 | `npm run build`           | Build your production site to `./dist/`          |
 |
-
-
-## 👀 Curious to Explore More?
-
-Check out [LAB-CH3](https://github.com/LaB-CH3) for a growing collection of current and future templates.
