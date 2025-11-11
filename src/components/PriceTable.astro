@@ -2,39 +2,39 @@
 
 const prices = [
   {
-    title: "Free Plan",
-    price: "0",
-    description: "Get started with a self-hosted website and essentials.",
+    title: "Data Command Center",
+    price: "Custom",
+    description: "Your starting point. Escape spreadsheet chaos.",
     features: [
-      "Free website hosting",
-      "Basic SEO setup",
-      "Starter templates",
-      "Community support",
-      "Dashboard access"
+      "3 data sources connected",
+      "Daily automated updates",
+      "Unlimited custom dashboards",
+      "Reports in seconds",
+      "Perfect for: Escaping spreadsheet chaos"
     ]
   },
   {
-    title: "Chill Plan",
-    price: "500",
-    description: "Perfect for small businesses ready to grow without the grind.",
+    title: "Scale & Analyze",
+    price: "Custom",
+    description: "Expand your capabilities. For complex needs and long-term growth.",
     features: [
-      "1 social post per week",
-      "Verified email scraping (up to 500)",
-      "Ad campaign setup",
-      "Priority support",
-      "Live dashboard metrics"
+      "Everything in Command Center",
+      "Unlimited data sources",
+      "Ongoing analytics partnership",
+      "Advanced reporting & trends",
+      "Monthly optimization"
     ]
   },
   {
-    title: "SuperChill Plan",
-    price: "2000",
-    description: "The complete marketing package — website, social, and email managed for you.",
+    title: "AI-Ready",
+    price: "Custom",
+    description: "Add intelligence. Move beyond dashboards.",
     features: [
-      "Website CRO Max (funnels, VSL, auto-replies)",
-      "SEO Max (Google + Maps + Reddit)",
-      "Weekly posts + creatives + ads",
-      "Email scraping + outreach",
-      "24/7 AI + human support"
+      "Requires Command Center first",
+      "Predictive analytics",
+      "Automated anomaly detection",
+      "Smart recommendations",
+      "Custom ML features"
     ]
   }
 ]
@@ -45,16 +45,16 @@ const prices = [
 <section>
     <div class="container">
         <div class="max-w-lg m-auto text-center">
-            <h1 class="text-xlg">Chill pricing</h1>
-            <p class="text-sm m-auto max-w-md">Choose the best plan for your business</p>
+            <h1 class="text-xlg">Built for Your Growth</h1>
+            <p class="text-sm m-auto max-w-md">Start with automated dashboards. Scale with advanced analytics. Add AI when you're ready.</p>
        </div>
         <div class="price-wrap gap-3">
             {prices.map((item) => (
                     <div class="price-item radius-md">
                         <h3 class="text-md text-bold">{item.title}</h3>
                         <div class="item-cost flex align-center gap-1">
-                            <h1 class="text-lg">${item.price}</h1>
-                            <p class="text-sm text-normal"> /per month</p>
+                            <h1 class="text-lg">{item.price}</h1>
+                            <p class="text-sm text-normal"> pricing</p>
                         </div>
                         <p class="price-desc">{item.description}</p>
                         <ul class="price-feature">
@@ -67,7 +67,7 @@ const prices = [
                                 </li>    
                             ))}
                         </ul>
-                        <a href="#" class="button w-full">Get Started for Free</a>
+                        <a href="/#contact" class="button w-full">Book Free Call</a>
                     </div>
                 ))
             }

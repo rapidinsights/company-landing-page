@@ -4,24 +4,21 @@ import featOne from '../images/shots/one.svg'
 import featTwo from '../images/shots/two.svg'
 import featThree from '../images/shots/three.svg'
 
-import utils from '../utils'
-
 const showcase = [
-    { 
-        title: '24/7 AI + Human Help',
-        desc: `Get instant answers, campaign updates, and support anytime. Your marketing doesn’t sleep — and neither do we.`,
+    {
+        title: 'Stop Manual Reporting',
+        desc: `Your data updates automatically while you sleep. No more weekend report marathons or chasing down numbers from five different spreadsheets.`,
         image: featOne,
    },
-   { 
-        title: 'Less Busywork, More Growth',
-        desc: `From email follow-ups to social posts, automation handles the grind. You focus on clients, we handle the execution.`,
+   {
+        title: 'Built for How You Work',
+        desc: `We don't hand you a template and walk away. Your dashboards match your workflow, show what matters to you, and grow as your business does.`,
         image: featTwo,
    },
-   { 
-        title: 'Clear, Simple, Always Updated',
-        desc: `No confusing reports. Just clean numbers, weekly email updates, and live metrics — including how you stack up against competitors.`,
+   {
+        title: 'From Chaos to Clarity',
+        desc: `One dashboard replaces dozens of spreadsheets. See everything at a glance. Drill down when you need details. Make decisions fast.`,
         image: featThree,
-        url: utils.buy_link,
    }
 ]
 ---
@@ -32,8 +29,8 @@ const showcase = [
 <section>
     <div class="container" id="features">
        <div class="max-w-md m-auto text-center">
-           <h2 class="text-lg">The New Way of Marketing</h2>
-           <p class="text-sm">Forget slow agencies and messy reports. SuperChill gives you 24/7 support, built-in automation, and a live dashboard — everything you need to grow without the grind.</p>
+           <h2 class="text-lg">Reclaim Your Weekends</h2>
+           <p class="text-sm">Stop spending hours compiling reports. We build data infrastructure that runs itself—fresh numbers every morning, custom dashboards that answer your questions instantly.</p>
        </div>
 
 
@@ -43,7 +40,7 @@ const showcase = [
                     <div class="item-text">
                         <h3 class="text-lg">{item.title}</h3>
                         <p class="text-sm">{item.desc}</p>
-                        {item.url && <a href={item.url} class="button button-primary" target="_blank">{utils.title}</a>}
+                        <a href="#contact" class="button button-primary">Book Free Call</a>
                     </div>
                     <img src={item.image.src} alt={item.title} class="w-full" />
                 </div>
